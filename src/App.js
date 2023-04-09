@@ -1,17 +1,24 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 
+import RootPage from "./pages/Root";
+
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootPage />,
+      children: [
+        { path: "", element: <Home /> },
+        { path: "/cart", element: <Cart /> },
+      ],
+    },
+  ]);
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </div>
   );
 }
