@@ -2,7 +2,13 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div style={{ display: "flex", alignItems: "space-between" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
       <div className="logo">LOGO STORE</div>
 
       <div>
