@@ -7,11 +7,20 @@ const Products = () => {
 
   const [products, setProducts] = useState([]);
 
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const res = await fetch("http://fakestoreapi.com/products");
+  //     const data = await res.json();
+  //     // console.log(data);
+  //     setProducts(data);
+  //   };
+  //   fetchProducts();
+  // }, []);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await fetch("http://fakestoreapi.com/products");
       const data = await res.json();
-      // console.log(data);
       setProducts(data);
     };
     fetchProducts();
